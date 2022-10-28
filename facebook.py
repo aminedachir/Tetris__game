@@ -7,27 +7,27 @@ window.title("facebook")
 window.geometry("500x650+500+50")
 
 def Click():
-    paragraphe.configure(text="   ")
-    facebook.configure(text="    ")
-    user_mail.configure(width=0)
-    user_password.configure(width=0)
-    login = Label(window,text="Log in Suuccefuly")
-    login.grid(row=0,column=0)
+    locx, locy = btn.winfo_x(), btn.winfo_y()
+    btn.place(x=-locx,y=-locy)
+    facebook.place(x=-locx,y=-locy)
+    user_mail.place(x=-locx,y=-locy)
+    user_password.place(x=-locx,y=-locy)
+    text_message = Label(window,text="Logged in Succefuly",font=('Arial bold', 30))
+    text_message.place(x=85,y=280)
 
-paragraphe = Label(window, text="       ")
+
 facebook = Label(window, text="Facebook", fg="Blue", font=('Arial bold', 45))
 
-paragraphe.grid(padx=0, pady=80)
-facebook.grid(padx=115, pady=10)
+facebook.place(x=125, y=180)
 
 user_mail = Entry(window,width=35)
 user_password = Entry(window,width=35)
 
-user_mail.grid(pady=10)
-user_password.grid(padx=15,pady=10)
+user_mail.place(x=150,y=270)
+user_password.place(x=150,y=300)
 
 btn = Button(window,text="Log in",width=9,fg='white',bg='blue',command=Click)
-btn.grid(padx=115,pady=10)
+btn.place(x=225,y=340)
 
 
 window.mainloop()
