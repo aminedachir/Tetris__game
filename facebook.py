@@ -1,19 +1,43 @@
+from asyncio.windows_events import NULL
 from tkinter import *
+from turtle import color
 
 window = Tk()
 window.title("facebook")
 window.geometry("500x650+500+50")
+#window.resizable('width, height')
 
 def Click():
-    locx, locy = btn.winfo_x(), btn.winfo_y()
-    btn.place(x=-locx,y=-locy)
-    facebook.place(x=-locx,y=-locy)
-    user_mail.place(x=-locx,y=-locy)
-    user_password.place(x=-locx,y=-locy)
-    mail.place(x=-locx,y=-locy)
-    password.place(x=-locx,y=-locy)
-    text_message = Label(window,text="Logged in Succefuly",font=('Arial bold', 30))
-    text_message.place(x=85,y=280)
+    if (user_mail.get()== "Admin" and user_password.get()=="Admin"):
+        locx, locy = btn.winfo_x(), btn.winfo_y()
+        btn.place(x=-locx,y=-locy)
+        facebook.place(x=-locx,y=-locy)
+        user_mail.place(x=-locx,y=-locy)
+        user_password.place(x=-locx,y=-locy)
+        mail.place(x=-locx,y=-locy)
+        password.place(x=-locx,y=-locy)
+        text_message = Label(window,text="Logged in Succefuly",font=('Arial bold', 30),fg="green")
+        text_message.place(x=85,y=280)
+    elif (user_mail.get()== "" and user_password.get()==""): 
+        locx, locy = btn.winfo_x(), btn.winfo_y()
+        btn.place(x=-locx,y=-locy)
+        facebook.place(x=-locx,y=-locy)
+        user_mail.place(x=-locx,y=-locy)
+        user_password.place(x=-locx,y=-locy)
+        mail.place(x=-locx,y=-locy)
+        password.place(x=-locx,y=-locy)
+        text_message = Label(window,text="No Inputs",font=('Arial bold', 30),fg="red")
+        text_message.place(x=150,y=280)
+    else :
+        locx, locy = btn.winfo_x(), btn.winfo_y()
+        btn.place(x=-locx,y=-locy)
+        facebook.place(x=-locx,y=-locy)
+        user_mail.place(x=-locx,y=-locy)
+        user_password.place(x=-locx,y=-locy)
+        mail.place(x=-locx,y=-locy)
+        password.place(x=-locx,y=-locy)
+        text_message = Label(window,text="You are not a member",font=('Arial bold', 30),fg="red")
+        text_message.place(x=60,y=280)
 
 facebook = Label(window, text="Facebook", fg="Blue", font=('Arial bold', 45))
 
