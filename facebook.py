@@ -1,6 +1,7 @@
 from tkinter import *
 
 window = Tk()
+window.iconbitmap('D:\python3\icons/icon1.ico')
 window.title("facebook")
 window.geometry("500x650+500+50")
 window.resizable(False, False)
