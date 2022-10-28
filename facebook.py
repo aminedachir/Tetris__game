@@ -1,11 +1,9 @@
-from asyncio.windows_events import NULL
 from tkinter import *
-from turtle import color
 
 window = Tk()
 window.title("facebook")
 window.geometry("500x650+500+50")
-#window.resizable('width, height')
+window.resizable(False, False)
 
 def Click():
     if (user_mail.get()== "Admin" and user_password.get()=="Admin"):
