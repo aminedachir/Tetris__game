@@ -7,6 +7,7 @@ window.maxsize(600,600)
 
 txt = Entry(window,width=20)
 txt.place(x=10,y=10)
+txt.focus()
 def click():
     res = "Welcome " + txt.get()
     txt1 = Label(window,text=res)
