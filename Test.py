@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
+from xmlrpc.client import boolean
 
 window = Tk()
 window.geometry("500x500")
@@ -14,6 +15,13 @@ combo.place(x=50,y=100)
 txt = Entry(window,width=20,state="disable")
 txt.place(x=10,y=10)
 #txt.focus()
+
+chk_state = BooleanVar()
+chk = Checkbutton(window,text="Choose",var=chk_state)
+chk.place(x=80,y=120)
+chk_state.set(True)
+
+
 def click():
     res = "Welcome " + txt.get()
     txt1 = Label(window,text=res)
